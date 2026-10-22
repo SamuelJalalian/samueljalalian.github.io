@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Samuel Jalalian ist Soziologe an der LMU München. Seine Forschung beschäftigt sich mit sozialen Ungleichheiten und der Frage, welche Maßnahmen Chancenungleichheiten verringern können." name="description"/>
+
+<meta name="google-site-verification" content="8hQ_ZtJ7hj3GS9p8JbhVZV-3bubQM_bdsxLi591VWYM" />
+
+<meta property="og:site_name"
+      content="Samuel Jalalian"/>
+    
+<title>Samuel Jalalian | Akademische Webseite</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Lora:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    :root {
+      --bg-primary: #FAF8F5;
+      --bg-secondary: #F2EDE4;
+      --bg-accent: #E8E1D5;
+      --text-primary: #2A2725;
+      --text-muted: #65605B;
+      --accent: #8C4A32;
+      --accent-hover: #6E3824;
+      --border: #DDD6CB;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Lora', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      font-size: 1.05rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); }
+    a:hover { color: var(--accent-hover); }
+
+    header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.6rem;
+      align-items: center;
+    }
+
+    nav a {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    section { padding-top: 4rem; margin-bottom: 2rem; }
+
+    .hero {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      padding-top: 1rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .profile-figure {
+      width: 220px;
+      flex-shrink: 0;
+      margin: 0;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    .photo-credit {
+      margin-top: 0.45rem;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .hero-text { flex-grow: 1; }
+    .hero-text h1 {
+      font-family: var(--font-heading);
+      font-size: 2.8rem;
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+
+    .hero-bio { margin-bottom: 1.5rem; }
+
+    .action-bar {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .social-icons { display: flex; align-items: center; gap: 1.2rem; }
+
+    .icon-link {
+      color: var(--text-primary);
+      font-size: 1.35rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-link:hover { color: var(--accent); transform: translateY(-2px); }
+
+    .btn {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: white;
+      background-color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.5rem 0.9rem;
+      border-radius: 3px;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .btn:hover { color: white; background-color: var(--accent-hover); border-color: var(--accent-hover); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .btn-secondary:hover { color: white; }
+
+    h2.section-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .tag-container { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+    .featured-video {
+      margin-top: 1rem;
+      border-top: 1px solid var(--border);
+      padding-top: 0.85rem;
+    }
+
+    .featured-video summary {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      cursor: pointer;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .featured-video summary::-webkit-details-marker { display: none; }
+    .featured-video summary::before { content: "▸"; transition: transform 0.2s ease; }
+    .featured-video[open] summary::before { transform: rotate(90deg); }
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 680px;
+      aspect-ratio: 16 / 9;
+      margin-top: 1rem;
+      overflow: hidden;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+    }
+
+    .video-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .video-fallback {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: white;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .video-fallback img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-fallback::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.16);
+      transition: background 0.2s ease;
+    }
+
+    .video-fallback:hover::after { background: rgba(0, 0, 0, 0.26); }
+
+    .video-play-button {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 68px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.78);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+      font-size: 1.35rem;
+      line-height: 1;
+      padding-left: 3px;
+    }
+
+    .video-link {
+      display: inline-block;
+      margin-top: 0.65rem;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .tag {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      color: var(--text-muted);
+    }
+
+    .item-list { display: flex; flex-direction: column; gap: 1.8rem; }
+    .item { display: grid; grid-template-columns: 110px 1fr; gap: 1.5rem; }
+    .item-year {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      padding-top: 0.2rem;
+    }
+
+    .item-content h3 {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      line-height: 1.4;
+    }
+
+    .item-authors, .item-meta { font-size: 0.95rem; color: var(--text-muted); }
+    .item-status {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      background: var(--bg-accent);
+      padding: 0.12rem 0.45rem;
+      border-radius: 3px;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .paper-actions { display: flex; gap: 0.65rem; flex-wrap: wrap; margin-top: 0.85rem; align-items: center; }
+
+    details.abstract {
+      margin-top: 0.9rem;
+      border-left: 2px solid var(--border);
+      padding-left: 0.9rem;
+    }
+
+    details.abstract summary {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      cursor: pointer;
+      list-style: none;
+      width: fit-content;
+    }
+
+    details.abstract summary::-webkit-details-marker { display: none; }
+    details.abstract summary::before { content: "+"; display: inline-block; width: 1.1rem; }
+    details.abstract[open] summary::before { content: "−"; }
+    details.abstract p { margin-top: 0.7rem; font-size: 0.94rem; color: var(--text-muted); max-width: 760px; }
+
+
+
+    .expandable-panel {
+      margin-top: 1.15rem;
+      border-top: 1px solid var(--border);
+      padding-top: 0.85rem;
+    }
+
+    .expandable-panel summary {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      cursor: pointer;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .expandable-panel summary::-webkit-details-marker { display: none; }
+    .expandable-panel summary::before { content: "▸"; transition: transform 0.2s ease; }
+    .expandable-panel[open] summary::before { transform: rotate(90deg); }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .teaching-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+      font-size: 0.88rem;
+    }
+
+    .teaching-table th,
+    .teaching-table td {
+      padding: 0.72rem 0.8rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .teaching-table tr:last-child td { border-bottom: 0; }
+    .teaching-table th {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.55px;
+      color: var(--text-muted);
+      background: var(--bg-secondary);
+      font-weight: 600;
+    }
+
+    .teaching-table td:first-child {
+      white-space: nowrap;
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-weight: 500;
+    }
+
+    .teaching-intro {
+      max-width: 820px;
+      margin-bottom: 0.45rem;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .media-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .media-card:hover {
+      color: var(--text-primary);
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+
+    .media-source {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.55px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .media-title {
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .media-date {
+      margin-top: auto;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .note { font-style: italic; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 3rem 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: var(--bg-secondary);
+    }
+
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; }
+      .profile-figure { width: min(100%, 320px); }
+      .profile-img { width: 100%; height: auto; aspect-ratio: 11 / 14; }
+      .item { grid-template-columns: 1fr; gap: 0.3rem; }
+      nav ul { display: none; }
+      main { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .nav-container { padding: 0 1.25rem; }
+      .media-grid { grid-template-columns: 1fr; }
+    }
+  
+
+    .language-switch {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      color: var(--text-primary);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 0.38rem 0.62rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .language-switch:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .lang-de { display: none; }
+    body.language-de .lang-en { display: none !important; }
+    body.language-de .lang-de { display: inline; }
+</style>
+</head>
+<body class="language-de">
+<header>
+<div class="nav-container">
+<a class="logo" href="#about">Samuel Jalalian</a>
+<nav aria-label="Primary navigation">
+<ul>
+<li><a href="#about"><span class="lang-en">About</span><span class="lang-de">Über mich</span></a></li>
+<li><a href="#publications"><span class="lang-en">Papers</span><span class="lang-de">Forschung</span></a></li>
+<li><a href="#teaching"><span class="lang-en">Teaching</span><span class="lang-de">Lehre</span></a></li>
+<li><a href="#outreach"><span class="lang-en">Outreach</span><span class="lang-de">Transfer</span></a></li>
+<li><a href="#contact"><span class="lang-en">Contact</span><span class="lang-de">Kontakt</span></a></li>
+</ul>
+</nav>
+<button aria-label="Website auf Englisch anzeigen" class="language-switch" id="language-switch" title="English" type="button">EN</button></div>
+</header>
+<main>
+<section class="hero" id="about" style="padding-top:0;">
+<figure class="profile-figure">
+<img alt="Portrait of Samuel Jalalian" class="profile-img" src="samuel_v2.jpg"/>
+<figcaption class="photo-credit"><span class="lang-en">Photo by Stella Traub</span><span class="lang-de">Foto: Stella Traub</span></figcaption>
+</figure>
+<div class="hero-text">
+<h1>Samuel Jalalian</h1>
+<div class="hero-subtitle"><span class="lang-en">PhD Student in Sociology | LMU Munich</span><span class="lang-de">Doktorand in Soziologie | LMU München</span></div>
+<p class="hero-bio"><span class="lang-en">I am a PhD student at the Chair of Social Structures and Social Inequalities (Prof. Dr. Fabian T. Pfeffer) at Ludwig-Maximilians-Universität München. My research examines how family background shapes people's life chances, with a particular focus on educational inequality. I am especially interested in the role of parental wealth and in policies that can reduce inequalities in opportunity, such as student aid programs.</span><span class="lang-de">Ich bin Doktorand am Lehrstuhl für Soziale Strukturen und soziale Ungleichheiten (Prof. Dr. Fabian T. Pfeffer) an der Ludwig-Maximilians-Universität München. In meiner Forschung untersuche ich, wie das Elternhaus die eigenen Lebenschancen prägt, mit einem besonderen Fokus auf Bildungsungleichheiten. Besonders interessiere ich mich für die Rolle elterlichen Vermögens und für Maßnahmen, die Chancenungleichheiten verringern können, etwa Studienförderung.</span></p>
+<div class="action-bar">
+<div class="social-icons">
+<a aria-label="Email Samuel Jalalian" class="icon-link" href="mailto:s.jalalian@lmu.de" title="Email"><i class="fa-regular fa-envelope"></i></a>
+<a aria-label="ORCID" class="icon-link" href="https://orcid.org/0009-0007-5402-6280" rel="noopener noreferrer" target="_blank" title="ORCID"><i class="fa-brands fa-orcid"></i></a>
+<a aria-label="LinkedIn" class="icon-link" href="https://www.linkedin.com/in/samuel-jalalian/" rel="noopener noreferrer" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+<a aria-label="YouTube" class="icon-link" href="https://www.youtube.com/@Samuel_Jalalian" rel="noopener noreferrer" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+</div>
+<a class="btn" href="Samuel_Jalalian_CV.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> <span class="lang-en">Curriculum Vitae</span><span class="lang-de">Lebenslauf</span></a>
+</div>
+</div>
+</section>
+<section id="publications">
+<h2 class="section-title"><span class="lang-en">Manuscripts in Progress</span><span class="lang-de">Manuskripte in Arbeit</span></h2>
+<div class="item-list">
+<div class="item">
+<div class="item-year"><span class="lang-en">Under Review</span><span class="lang-de">In Review</span></div>
+<div class="item-content">
+<h3>Wealth as Private Insurance: Unequal Protection against the Scarring Effects of Unemployment in the U.S. and Germany</h3>
+<p class="item-authors">Martin Ehlert, Fabian T. Pfeffer, &amp; <strong>Samuel Jalalian</strong></p>
+<div class="paper-actions">
+<a class="btn btn-secondary" href="https://fabianpfeffer.com/wp-content/uploads/EhlertPfefferJalalian2026.pdf" rel="noopener noreferrer" target="_blank"><i class="fa-regular fa-file-pdf"></i> Working Paper</a>
+</div>
+<details class="abstract">
+<summary><span class="lang-en">Project Description</span><span class="lang-de">Projektbeschreibung</span></summary>
+<p><span class="lang-en">Losing a job can have lasting consequences. Even after finding work again, people often earn less than comparable workers who were continuously employed. This is known as wage scarring. In this project, we compare Germany and the United States to ask whether wealth can protect workers from these lasting losses. For example, wealthier people may be able to search longer for a suitable job or negotiate more confidently over pay.</span><span class="lang-de">Arbeitslosigkeit kann langfristige Folgen für den Lohn haben. Selbst nachdem Menschen wieder eine Stelle gefunden haben, verdienen sie häufig weniger als vergleichbare Beschäftigte, die durchgehend gearbeitet haben. Dieses Phänomen wird als „Wage Scarring“ bezeichnet. In diesem Projekt vergleichen wir Deutschland und die USA und untersuchen, ob Vermögen Beschäftigte vor diesen langfristigen Lohneinbußen schützen kann. Vermögendere Personen könnten sich beispielsweise länger Zeit für die Suche nach einer passenden Stelle nehmen oder selbstbewusster über ihr Gehalt verhandeln.</span></p>
+</details>
+<details class="abstract">
+<summary><span class="lang-en">Abstract</span><span class="lang-de">Abstract</span></summary>
+<p><span class="lang-en">Job loss has detrimental and long-lasting effects on workers, including lower wages after reemployment. The size of these wage scars, however, depends on the safety nets available during unemployment. Whereas prior research has focused on public safety nets, particularly unemployment insurance, we extend this perspective by considering the private safety net provided by household wealth. Because access to wealth is unequally distributed, private insurance may reinforce the stratifying effects of unemployment on subsequent wage inequality. Comparing the United States and Germany allows us to assess how private wealth interacts with public insurance in buffering the effects of job loss. Drawing on two high-quality panel surveys (PSID and SOEP) and difference-in-differences estimators we show that in the United States, wage scars are larger among workers with little wealth than among workers with greater wealth, producing pronounced inequality in post-unemployment outcomes. We find no comparable pattern in Germany, suggesting that wealth becomes an important safety net primarily where public insurance is weak. Additional analyses show that even in the United States, household wealth protects only the wealthiest households and only during shorter unemployment spells. The effect of wealth on wage scars appears to operate mainly through differences in job-search strategies.</span><span class="lang-de">Arbeitsplatzverlust hat nachteilige und langfristige Folgen für Beschäftigte, darunter niedrigere Löhne nach der Wiederbeschäftigung. Wie groß diese Lohneinbußen ausfallen, hängt jedoch von den während der Arbeitslosigkeit verfügbaren Absicherungen ab. Während sich die bisherige Forschung vor allem auf öffentliche Sicherungssysteme, insbesondere die Arbeitslosenversicherung, konzentriert hat, erweitern wir diese Perspektive um das private Sicherheitsnetz des Haushaltsvermögens. Da Vermögen ungleich verteilt ist, könnte private Absicherung die stratifizierenden Folgen von Arbeitslosigkeit für die spätere Lohnungleichheit verstärken. Der Vergleich zwischen den USA und Deutschland ermöglicht es uns zu untersuchen, wie privates Vermögen mit öffentlicher Absicherung zusammenwirkt, um die Folgen von Arbeitslosigkeit abzufedern. Auf Grundlage zweier Panelstudien (PSID und SOEP) und Difference-in-Differences-Schätzern zeigen wir, dass die Lohneinbußen in den USA bei Beschäftigten mit wenig Vermögen größer sind als bei Beschäftigten mit mehr Vermögen, wodurch ausgeprägte Ungleichheiten nach Arbeitslosigkeit entstehen. Für Deutschland finden wir kein vergleichbares Muster. Das deutet darauf hin, dass Vermögen vor allem dort zu einem wichtigen Sicherheitsnetz wird, wo die öffentliche Absicherung schwach ist. Zusätzliche Analysen zeigen, dass selbst in den USA Haushaltsvermögen nur die vermögendsten Haushalte und nur bei kürzeren Arbeitslosigkeitsphasen schützt. Der Zusammenhang zwischen Vermögen und Lohneinbußen scheint vor allem über Unterschiede in den Strategien der Arbeitssuche zu verlaufen.</span></p>
+</details>
+</div>
+</div>
+<div class="item">
+<div class="item-year"><span class="lang-en">Under Review</span><span class="lang-de">In Review</span></div>
+<div class="item-content">
+<h3>Another Empty Promise of Grade Retention: Peer Effects of Classmate Retention on Promoted Students</h3>
+<p class="item-authors"><strong>Samuel Jalalian</strong> &amp; Fabian T. Pfeffer</p>
+<details class="abstract">
+<summary><span class="lang-en">Project Description</span><span class="lang-de">Projektbeschreibung</span></summary>
+<p><span class="lang-en">Grade retention, making students repeat a school year, is a common educational practice. Research, however, raises serious doubts about whether it benefits the students who are held back. Grade retention is also costly and socially selective, with some groups of students being more likely to repeat a grade than others. One remaining argument is that the other students may benefit when a lower-performing classmate leaves the class. This is often justified by the idea that the class becomes more homogeneous and that everyone can learn better as a result. This project tests whether those supposed benefits for classmates actually exist.</span><span class="lang-de">Klassenwiederholungen sind eine verbreitete pädagogische Maßnahme. Die Forschung bezweifelt jedoch deutlich, dass die Maßnahme für Sitzenbleiber:innen nützlich ist. Klassenwiederholungen sind außerdem teuer und sozial selektiv, da einige Gruppen häufiger eine Klasse wiederholen als andere. Ein verbleibendes Argument für das Sitzenbleiben lautet, dass die übrigen Schüler:innen profitieren könnten, wenn eine leistungsschwächere Person die Klasse verlässt. Begründet wird dies unter anderem damit, dass die Klasse dadurch homogener werde und alle besser lernen könnten. Dieses Projekt prüft, ob solche Vorteile für die Mitschüler:innen tatsächlich bestehen.</span></p>
+</details>
+<details class="abstract">
+<summary><span class="lang-en">Abstract</span><span class="lang-de">Abstract</span></summary>
+<p><span class="lang-en">Grade retention is a common but costly educational practice and studies have repeatedly shown that, in many contexts, it offers no academic benefit to retained students. A remaining justification for its continued use is the presumed benefit for the promoted peers from whose class the retained student was removed. This study tests that assumption using longitudinal data from the German National Educational Panel Study (NEPS) and a difference-in-differences approach, focusing on grades and competencies from Grades 1 to 9. Results predominantly yield null findings, with a small positive effect on mathematics grades in lower secondary education (0.08–0.09 SD) as the only exception. Overall, the findings provide little support for presumed peer benefits as a justification for grade retention.</span><span class="lang-de">Klassenwiederholungen sind eine verbreitete, aber kostspielige pädagogische Maßnahme. Studien haben wiederholt gezeigt, dass sie in vielen Kontexten keinen schulischen Nutzen für die Schüler:innen bringen, die eine Klasse wiederholen. Eine verbleibende Rechtfertigung für ihren Einsatz ist der vermutete Nutzen für die versetzten Mitschüler:innen, aus deren Klasse die zurückgestufte Person entfernt wurde. Diese Studie prüft diese Annahme mit Längsschnittdaten des Nationalen Bildungspanels (NEPS) und einem Difference-in-Differences-Ansatz. Im Fokus stehen Noten und Kompetenzen von Klasse 1 bis 9. Die Ergebnisse sind überwiegend Nullbefunde. Die einzige Ausnahme ist ein kleiner positiver Effekt auf Mathematiknoten in der Sekundarstufe I (0,08–0,09 SD). Insgesamt liefern die Analysen nur wenig Unterstützung dafür, vermeintliche Vorteile für Mitschüler:innen als Rechtfertigung für Klassenwiederholungen heranzuziehen.</span></p>
+</details>
+</div>
+</div>
+<div class="item">
+<div class="item-year"><span class="lang-en">In Prep.</span><span class="lang-de">In Vorbereitung</span></div>
+<div class="item-content">
+<h3>Student Aid and Parental Wealth: A Blind Spot in the Pursuit of Equity?</h3>
+<p class="item-authors"><strong>Samuel Jalalian</strong></p>
+<details class="abstract">
+<summary><span class="lang-en">Project Description</span><span class="lang-de">Projektbeschreibung</span></summary>
+<p><span class="lang-en">Germany's student aid program BAföG is designed to make university accessible to people from families with fewer financial resources. When determining need, the system considers students' own income and wealth as well as their parents' income, including income generated by assets. The parents' assets themselves, however, are not taken into account. Two families can therefore have the same income but still face very different financial circumstances. This project examines whether parental wealth matters for students' ability to cover the costs of higher education beyond income, whether students from wealthier families apply for BAföG less often, just as often, or even more often, and how much economic inequality in university enrollment and completion could be reduced if parental wealth were taken into account.</span><span class="lang-de">Das BAföG soll auch Personen aus ärmeren Elternhäusern ein Studium ermöglichen. Bei der Bedarfsermittlung werden das eigene Einkommen und Vermögen der Studierenden sowie das Einkommen ihrer Eltern berücksichtigt, einschließlich Einkünften aus Vermögen. Die Vermögenswerte der Eltern selbst bleiben jedoch unberücksichtigt. Zwei Familien können daher dasselbe Einkommen haben und trotzdem in sehr unterschiedlichen finanziellen Situationen leben. Das Projekt untersucht, ob elterliches Vermögen über das Einkommen hinaus dafür relevant ist, Studienkosten zu bewältigen, ob Studierende aus vermögenderen Familien seltener, genauso häufig oder sogar häufiger BAföG beantragen und wie stark ökonomische Ungleichheiten im Studieneintritt und -abschluss sinken würden, wenn elterliches Vermögen beim BAföG berücksichtigt würde.</span></p>
+</details>
+<details class="abstract">
+<summary><span class="lang-en">Abstract</span><span class="lang-de">Abstract</span></summary>
+<p><span class="lang-en">Many need-based student aid programs, including Germany’s BAföG, assess parental income but not parental wealth holdings. Using German NEPS and SOEP data, this study examines what this omission means for economic inequality in higher education. It asks whether parental wealth affects students’ financing capacity beyond income, whether application behavior compensates for wealth-blind eligibility, and how a wealth-inclusive means test would alter economic gaps in university enrollment and completion. Regression analyses show similarly strong adjusted associations of parental wealth and income with financing capacity, even in Germany’s largely tuition-free system. Within income quintiles, wealthier students apply less often, partially compensating for wealth-blind eligibility, although some still receive aid. A counterfactual wealth-inclusive means test would reduce wealth gaps in enrollment and completion by [TBD] and [TBD] percent and income gaps by [TBD] and [TBD] percent. Means tests should therefore consider parental wealth alongside income, although most economic inequality would remain.</span><span class="lang-de">Viele bedarfsabhängige Studienförderprogramme, darunter das deutsche BAföG, berücksichtigen das Einkommen der Eltern, nicht aber deren Vermögen. Anhand deutscher NEPS- und SOEP-Daten untersucht diese Studie, was das Vernachlässigen elterlicher Vermögenswerte für die ökonomische Ungleichheit im Hochschulbereich bedeutet. Im Paper untersuche ich, ob elterliches Vermögen die Finanzierungsmöglichkeiten von Studierenden über das Einkommen hinaus beeinflusst, ob das Antragsverhalten die vermögensblinde Anspruchsprüfung teilweise kompensiert und wie ein Bedürftigkeitstest, der Vermögen berücksichtigt, ökonomische Unterschiede bei Hochschulzugang und Studienabschluss verändern würde. Regressionsanalysen zeigen ähnlich starke bereinigte Zusammenhänge von elterlichem Vermögen und Einkommen mit den Finanzierungsmöglichkeiten, selbst im weitgehend gebührenfreien deutschen Hochschulsystem. Innerhalb von Einkommensquintilen beantragen vermögendere Studierende seltener BAföG, wodurch die vermögensblinde Anspruchsprüfung teilweise kompensiert wird, obwohl einige weiterhin Förderung erhalten. Ein kontrafaktischer Bedürftigkeitstest, der Vermögen berücksichtigt, würde Vermögensunterschiede bei Hochschulzugang und Studienabschluss um [TBD] und [TBD] Prozent sowie Einkommensunterschiede um [TBD] und [TBD] Prozent reduzieren. Bedürftigkeitsprüfungen sollten daher elterliches Vermögen neben Einkommen berücksichtigen, auch wenn der Großteil der ökonomischen Ungleichheit bestehen bliebe.</span></p>
+</details>
+</div>
+</div>
+<div class="item">
+<div class="item-year"><span class="lang-en">In Prep.</span><span class="lang-de">In Vorbereitung</span></div>
+<div class="item-content">
+<h3>Institutional Drift in Capitalism: The Case of German Student Aid</h3>
+<p class="item-authors"><strong>Samuel Jalalian</strong> &amp; Lena Radau</p>
+<details class="abstract">
+<summary><span class="lang-en">Project Description</span><span class="lang-de">Projektbeschreibung</span></summary>
+<p><span class="lang-en">BAföG is meant to make university affordable for students from families with fewer financial resources. But whether it still achieves this goal depends not only on the amount of aid, but also on changes elsewhere in society, for example rising housing costs. This project examines how well BAföG has kept up with such changes over time and whether increases in student aid may, in part, be absorbed by higher rents rather than improving students' financial situation.</span><span class="lang-de">BAföG soll ein Studium auch für Studierende aus Familien mit weniger finanziellen Ressourcen bezahlbar machen. Ob es dieses Ziel heute noch erreicht, hängt aber nicht nur von der Höhe der Förderung ab, sondern auch von Veränderungen in anderen Bereichen der Gesellschaft, etwa steigenden Wohnkosten. Das Projekt untersucht, wie gut das BAföG mit solchen Veränderungen im Zeitverlauf Schritt gehalten hat und ob Erhöhungen der Förderung teilweise durch höhere Mieten aufgezehrt werden, anstatt die finanzielle Situation der Studierenden zu verbessern.</span></p>
+</details>
+</div>
+</div>
+<div class="item">
+<div class="item-year"><span class="lang-en">In Prep.</span><span class="lang-de">In Vorbereitung</span></div>
+<div class="item-content">
+<h3>How Contextualizing Wealth Shapes Perceptions and Tax Preferences</h3>
+<p class="item-authors">Franziska Disslbacher, Raphael Gottweis, Victoria Hünewaldt, <strong>Samuel Jalalian</strong>, &amp; Daniel Rösler</p>
+<details class="abstract">
+<summary><span class="lang-en">Project Description</span><span class="lang-de">Projektbeschreibung</span></summary>
+<p><span class="lang-en">Very large amounts of wealth can be difficult to imagine. In this project, we use survey experiments to test whether making wealth more tangible, for example by showing what different levels of wealth could actually buy, changes how people perceive economic inequality and how they think wealth should be taxed.</span><span class="lang-de">Sehr große Vermögen sind schwer vorstellbar. In diesem Projekt untersuchen wir mit Umfrageexperimenten, ob sich die Wahrnehmung ökonomischer Ungleichheit und Einstellungen zur Vermögensbesteuerung verändern, wenn Vermögen greifbarer gemacht wird, zum Beispiel indem gezeigt wird, was man mit unterschiedlichen Vermögenshöhen tatsächlich kaufen könnte.</span></p>
+</details>
+</div>
+</div>
+</div>
+</section>
+<section id="teaching">
+<h2 class="section-title"><span class="lang-en">Teaching</span><span class="lang-de">Lehre</span></h2>
+<p class="teaching-intro"><span class="lang-en">I teach undergraduate courses (Bachelor's level) in English and German on educational and wealth inequalities, as well as related topics such as social mobility. I also teach reading seminars centered on the close discussion of a single book over the course of a semester, including <em>Die Teilhabegesellschaft</em> and <em>Limitarianism</em>. In addition, I supervise bachelor's theses.</span><span class="lang-de">In meiner Lehre biete ich deutsch- und englischsprachige Bachelorseminare zu Bildungs- und Vermögensungleichheiten sowie zu verwandten Themen wie sozialer Mobilität an. Außerdem biete ich Lektürekurse an, in denen über ein Semester hinweg ein einzelnes Buch intensiv gelesen und diskutiert wird, darunter <em>Die Teilhabegesellschaft</em> und <em>Limitarianism</em>. Darüber hinaus betreue ich Bachelorarbeiten.</span></p>
+<details class="expandable-panel">
+<summary><span class="lang-en">Full Teaching Record</span><span class="lang-de">Vollständige Lehrübersicht</span></summary>
+<div class="table-wrap">
+<table class="teaching-table">
+<thead>
+<tr>
+<th><span class="lang-en">Term</span><span class="lang-de">Semester</span></th>
+<th><span class="lang-en">Course</span><span class="lang-de">Kurs</span></th>
+<th><span class="lang-en">Format</span><span class="lang-de">Format</span></th>
+</tr>
+</thead>
+<tbody>
+<tr><td><span class="lang-en">Winter 2026/27</span><span class="lang-de">Wintersemester 2026/27</span></td><td><span class="lang-en">Introduction to the Sociology of Education</span><span class="lang-de">Einführung in die Bildungssoziologie</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Winter 2026/27</span><span class="lang-de">Wintersemester 2026/27</span></td><td><span class="lang-en">Introduction to the Sociology of Education</span><span class="lang-de">Einführung in die Bildungssoziologie</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Winter 2026/27</span><span class="lang-de">Wintersemester 2026/27</span></td><td><span class="lang-en">Bachelor's Theses Seminar</span><span class="lang-de">Bachelorarbeitsseminar</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Summer 2026</span><span class="lang-de">Sommersemester 2026</span></td><td><span class="lang-en">Introduction to the Sociology of Education</span><span class="lang-de">Einführung in die Bildungssoziologie</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Summer 2026</span><span class="lang-de">Sommersemester 2026</span></td><td><span class="lang-en">Sociology of Wealth</span><span class="lang-de">Soziologie des Vermögens</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Summer 2026</span><span class="lang-de">Sommersemester 2026</span></td><td><span class="lang-en">Reading Seminar: Limitarianism</span><span class="lang-de">Lektürekurs: Limitarianism</span></td><td><span class="lang-en">B.A. reading seminar</span><span class="lang-de">B.A.-Lektürekurs</span></td></tr>
+<tr><td><span class="lang-en">Winter 2025/26</span><span class="lang-de">Wintersemester 2025/26</span></td><td><span class="lang-en">Introduction to the Sociology of Education</span><span class="lang-de">Einführung in die Bildungssoziologie</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Winter 2025/26</span><span class="lang-de">Wintersemester 2025/26</span></td><td><span class="lang-en">Reading Seminar: Die Teilhabegesellschaft</span><span class="lang-de">Lektürekurs: Die Teilhabegesellschaft</span></td><td><span class="lang-en">B.A. reading seminar</span><span class="lang-de">B.A.-Lektürekurs</span></td></tr>
+<tr><td><span class="lang-en">Summer 2025</span><span class="lang-de">Sommersemester 2025</span></td><td><span class="lang-en">Introduction to the Sociology of Education</span><span class="lang-de">Einführung in die Bildungssoziologie</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Summer 2025</span><span class="lang-de">Sommersemester 2025</span></td><td><span class="lang-en">Bachelor's Theses Seminar</span><span class="lang-de">Bachelorarbeitsseminar</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Summer 2025</span><span class="lang-de">Sommersemester 2025</span></td><td><span class="lang-en">Organization of the Lecture Series (“Ringübung”)</span><span class="lang-de">Organisation der Ringübung</span></td><td><span class="lang-en">B.A. lecture series (organizer)</span><span class="lang-de">B.A.-Ringübung (Organisation)</span></td></tr>
+<tr><td><span class="lang-en">Winter 2024/25</span><span class="lang-de">Wintersemester 2024/25</span></td><td><span class="lang-en">Introduction to the Sociology of Education</span><span class="lang-de">Einführung in die Bildungssoziologie</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Winter 2024/25</span><span class="lang-de">Wintersemester 2024/25</span></td><td><span class="lang-en">Sociology of Wealth</span><span class="lang-de">Soziologie des Vermögens</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Summer 2024</span><span class="lang-de">Sommersemester 2024</span></td><td><span class="lang-en">Introduction to the Sociology of Education</span><span class="lang-de">Einführung in die Bildungssoziologie</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Summer 2024</span><span class="lang-de">Sommersemester 2024</span></td><td><span class="lang-en">Social Mobility: Theory, Methods, and Empirical Findings</span><span class="lang-de">Soziale Mobilität: Theorie, Methoden und empirische Befunde</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Summer 2024</span><span class="lang-de">Sommersemester 2024</span></td><td><span class="lang-en">Wealth Research (with Fabian Pfeffer)</span><span class="lang-de">Vermögensforschung (mit Fabian Pfeffer)</span></td><td><span class="lang-en">M.A. seminar</span><span class="lang-de">M.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Winter 2023/24</span><span class="lang-de">Wintersemester 2023/24</span></td><td><span class="lang-en">Introduction to the Sociology of Education</span><span class="lang-de">Einführung in die Bildungssoziologie</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+<tr><td><span class="lang-en">Winter 2023/24</span><span class="lang-de">Wintersemester 2023/24</span></td><td><span class="lang-en">Introduction to the Sociology of Education</span><span class="lang-de">Einführung in die Bildungssoziologie</span></td><td><span class="lang-en">B.A. seminar</span><span class="lang-de">B.A.-Seminar</span></td></tr>
+</tbody>
+</table>
+</div>
+</details>
+</section>
+<section id="outreach">
+<h2 class="section-title"><span class="lang-en">Science Communication &amp; Media</span><span class="lang-de">Wissenschaftskommunikation &amp; Medien</span></h2>
+<div class="item-list">
+<div class="item">
+<div class="item-year"><span class="lang-en">Media</span><span class="lang-de">Medien</span></div>
+<div class="item-content">
+<h3><span class="lang-en">Media Coverage</span><span class="lang-de">Medienberichte</span></h3>
+<p class="item-meta"><span class="lang-en">TZ, Merkur, and Psychologie Heute.</span><span class="lang-de">TZ, Merkur und Psychologie Heute.</span></p>
+<details class="expandable-panel">
+<summary><span class="lang-en">Featured Articles</span><span class="lang-de">Ausgewählte Artikel</span></summary>
+<div class="media-grid">
+<a class="media-card" href="https://www.merkur.de/bayern/eine-verschwindend-kleine-gruppe-experte-ueber-armut-in-bayern-94422750.html" rel="noopener noreferrer" target="_blank">
+<span class="media-source">Merkur</span>
+<span class="media-title">“Verschwindend klein”: Die Wahrheit über Bürgergeldempfänger</span>
+<span class="media-date"><span class="lang-en">August 21, 2026 ↗</span><span class="lang-de">21. August 2026 ↗</span></span>
+</a>
+<a class="media-card" href="https://www.merkur.de/bayern/luegen-armut-in-deutschland-warum-die-statistiken-94417367.html" rel="noopener noreferrer" target="_blank">
+<span class="media-source">Merkur</span>
+<span class="media-title">Armuts-Teufelskreis in Deutschland: “Von einer Generation zur nächsten weitergegeben”</span>
+<span class="media-date"><span class="lang-en">August 22, 2026 ↗</span><span class="lang-de">22. August 2026 ↗</span></span>
+</a>
+<a class="media-card" href="https://www.tz.de/bayern/armut-in-deutschland-warum-die-statistiken-ein-verzerrtes-bild-liefern-94435801.html" rel="noopener noreferrer" target="_blank">
+<span class="media-source">TZ</span>
+<span class="media-title">“Absolute und relative Armut in Deutschland” – Die Gefahr einer unzureichenden Statistik</span>
+<span class="media-date"><span class="lang-en">August 10, 2026 ↗</span><span class="lang-de">10. August 2026 ↗</span></span>
+</a>
+</div>
+</details>
+</div>
+</div>
+<div class="item">
+<div class="item-year"><span class="lang-en">2020–present</span><span class="lang-de">2020–heute</span></div>
+<div class="item-content">
+<h3><span class="lang-en">YouTube Channel (@Samuel_Jalalian)</span><span class="lang-de">YouTube-Kanal (@Samuel_Jalalian)</span></h3>
+<p class="item-meta"><span class="lang-en">Since 2020, I have created more than 50 educational videos on sociology, philosophy, and social inequality.</span><span class="lang-de">Seit 2020 habe ich mehr als 50 Erklärvideos zu Soziologie, Philosophie und sozialer Ungleichheit erstellt.</span></p>
+<div class="paper-actions">
+<a class="btn btn-secondary" href="https://www.youtube.com/@Samuel_Jalalian" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-youtube"></i> <span class="lang-en">YouTube Channel</span><span class="lang-de">YouTube-Kanal</span></a>
+</div>
+<details class="featured-video">
+<summary><span class="lang-en">Featured Video</span><span class="lang-de">Ausgewähltes Video</span></summary>
+<div class="video-wrap" id="featured-video-player">
+<a aria-label="Watch the featured video on YouTube" class="video-fallback" href="https://youtu.be/Hu2U0Y7B29Q?si=AWjA3UvPqdKoaBCH" rel="noopener noreferrer" target="_blank">
+<img alt="Thumbnail of the featured YouTube video" loading="lazy" src="https://i.ytimg.com/vi/Hu2U0Y7B29Q/hqdefault.jpg"/>
+<span aria-hidden="true" class="video-play-button">▶</span>
+</a>
+</div>
+<a class="video-link" href="https://youtu.be/Hu2U0Y7B29Q?si=AWjA3UvPqdKoaBCH" rel="noopener noreferrer" target="_blank"><span class="lang-en">Watch on YouTube →</span><span class="lang-de">Auf YouTube ansehen →</span></a>
+</details>
+</div>
+</div>
+<div class="item">
+<div class="item-year"><span class="lang-en">Forthcoming</span><span class="lang-de">Demnächst</span></div>
+<div class="item-content">
+<h3><span class="lang-en">BMBF-funded Project / OPENvhb</span><span class="lang-de">BMBF-gefördertes Projekt / OPENvhb</span></h3>
+<p class="item-meta"><span class="lang-en">Creation of two educational videos on wealth inequality and editing of four additional videos on social inequality for the open educational platform OPENvhb. Publication forthcoming.</span><span class="lang-de">Erstellung von zwei Lernvideos zu Vermögensungleichheit und Bearbeitung von vier weiteren Videos zu sozialer Ungleichheit für die offene Lernplattform OPENvhb. Veröffentlichung demnächst.</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="contact">
+<h2 class="section-title"><span class="lang-en">Contact / Legal Notice</span><span class="lang-de">Kontakt / Impressum</span></h2>
+<p><span class="lang-en">Samuel Jalalian<br/>c/o Block Services<br/>Stuttgarter Str. 106<br/>70736 Fellbach, Germany</span><span class="lang-de">Samuel Jalalian<br/>c/o Block Services<br/>Stuttgarter Str. 106<br/>70736 Fellbach, Deutschland</span></p>
+<p style="margin-top: 1.5rem;"><span class="lang-en"><strong>Contact</strong><br/>Email: <a href="mailto:s.jalalian@lmu.de">s.jalalian@lmu.de</a></span><span class="lang-de"><strong>Kontakt</strong><br/>E-Mail: <a href="mailto:s.jalalian@lmu.de">s.jalalian@lmu.de</a></span></p>
+<p style="margin-top: 1.5rem;"><span class="lang-en"><strong>Editorial responsibility</strong><br/>Seyed Samuel Jalalian Asl<br/>Address as above</span><span class="lang-de"><strong>Redaktionell verantwortlich</strong><br/>Seyed Samuel Jalalian Asl<br/>Anschrift siehe oben</span></p>
+</section>
+</main>
+<footer>
+<p><span class="lang-en">© 2026 Samuel Jalalian. Hosted via GitHub Pages.</span><span class="lang-de">© 2026 Samuel Jalalian. Gehostet über GitHub Pages.</span></p>
+</footer>
+<script>
+    const languageSwitch = document.getElementById('language-switch');
+    const metaDescription = document.querySelector('meta[name="description"]');
+
+    const pageMeta = {
+      en: {
+        title: 'Samuel Jalalian | Academic Website',
+        description: "Samuel Jalalian is a sociologist at LMU Munich. His research focuses on social inequalities and on policies that can reduce inequalities in opportunity."
+      },
+      de: {
+        title: 'Samuel Jalalian | Akademische Webseite',
+        description: 'Samuel Jalalian ist Soziologe an der LMU München. Seine Forschung beschäftigt sich mit sozialen Ungleichheiten und der Frage, welche Maßnahmen Chancenungleichheiten verringern können.'
+      }
+    };
+
+    function setLanguage(language, persist = true) {
+      const useGerman = language === 'de';
+      document.body.classList.toggle('language-de', useGerman);
+      document.documentElement.lang = useGerman ? 'de' : 'en';
+      document.title = pageMeta[language].title;
+      if (metaDescription) metaDescription.setAttribute('content', pageMeta[language].description);
+
+      if (languageSwitch) {
+        languageSwitch.textContent = useGerman ? 'EN' : 'DE';
+        languageSwitch.setAttribute('aria-label', useGerman ? 'Website auf Englisch anzeigen' : 'Switch website to German');
+        languageSwitch.setAttribute('title', useGerman ? 'English' : 'Deutsch');
+      }
+
+      const portrait = document.querySelector('.profile-img');
+      if (portrait) portrait.alt = useGerman ? 'Porträt von Samuel Jalalian' : 'Portrait of Samuel Jalalian';
+
+      const primaryNav = document.querySelector('nav');
+      if (primaryNav) primaryNav.setAttribute('aria-label', useGerman ? 'Hauptnavigation' : 'Primary navigation');
+
+      const emailIcon = document.querySelector('.social-icons a[href^="mailto:"]');
+      if (emailIcon) {
+        emailIcon.title = useGerman ? 'E-Mail' : 'Email';
+        emailIcon.setAttribute('aria-label', useGerman ? 'E-Mail an Samuel Jalalian' : 'Email Samuel Jalalian');
+      }
+
+      const videoThumb = document.querySelector('.video-fallback img');
+      if (videoThumb) videoThumb.alt = useGerman ? 'Vorschaubild des ausgewählten YouTube-Videos' : 'Thumbnail of the featured YouTube video';
+
+      const videoLink = document.querySelector('.video-fallback');
+      if (videoLink) videoLink.setAttribute('aria-label', useGerman ? 'Ausgewähltes Video auf YouTube ansehen' : 'Watch the featured video on YouTube');
+
+      const videoIframe = document.querySelector('#featured-video-player iframe');
+      if (videoIframe) videoIframe.title = useGerman ? 'YouTube-Videoplayer' : 'YouTube video player';
+
+      if (persist) {
+        try { localStorage.setItem('preferred-language', language); } catch (e) {}
+      }
+    }
+
+    if (languageSwitch) {
+      languageSwitch.addEventListener('click', function () {
+        const current = document.body.classList.contains('language-de') ? 'de' : 'en';
+        setLanguage(current === 'en' ? 'de' : 'en');
+      });
+    }
+
+    let savedLanguage = null;
+    try { savedLanguage = localStorage.getItem('preferred-language'); } catch (e) {}
+    setLanguage(savedLanguage === 'en' ? 'en' : 'de', false);
+
+    // YouTube requires an HTTP Referer for embedded playback. When this file is
+    // opened directly from the computer (file://), no Referer is available, so
+    // the clickable thumbnail remains visible. On GitHub Pages or localhost,
+    // the embedded player is loaded instead.
+    document.addEventListener('DOMContentLoaded', function () {
+      const playerContainer = document.getElementById('featured-video-player');
+      const isHosted = window.location.protocol === 'https:' || window.location.protocol === 'http:';
+
+      if (!playerContainer || !isHosted) return;
+
+      const iframe = document.createElement('iframe');
+      const origin = encodeURIComponent(window.location.origin);
+      iframe.src = 'https://www.youtube.com/embed/Hu2U0Y7B29Q?si=AWjA3UvPqdKoaBCH&origin=' + origin;
+      iframe.title = document.body.classList.contains('language-de') ? 'YouTube-Videoplayer' : 'YouTube video player';
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      playerContainer.replaceChildren(iframe);
+    });
+</script>
+</body>
+</html>
